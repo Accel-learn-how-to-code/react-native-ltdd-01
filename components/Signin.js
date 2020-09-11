@@ -13,7 +13,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-function Login({navigation}) {
+function Signin({navigation}) {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -29,6 +29,7 @@ function Login({navigation}) {
             Sign up to start your journey
           </Text>
         </View>
+        {/* Võ Đình Hoàng Long 1811505310323 */}
         <View style={styles.content}>
           <Text style={styles.labelTiltle}>Email: </Text>
           <TextInput style={styles.inputPlace} placeholder="user@mail.com" />
@@ -117,4 +118,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Signin;

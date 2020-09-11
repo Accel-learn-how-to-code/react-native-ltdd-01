@@ -26,9 +26,10 @@ function Login({navigation}) {
             paddingHorizontal: 25,
             paddingBottom: 25,
           }}>
-          Login to continue
+          Log in to continue
         </Text>
       </View>
+      {/* Võ Đình Hoàng Long 1811505310323 */}
       <View style={styles.content}>
         <Text style={styles.labelTiltle}>Email: </Text>
         <TextInput style={styles.inputPlace} placeholder="user@mail.com" />

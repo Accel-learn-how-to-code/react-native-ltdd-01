@@ -1,5 +1,6 @@
 import * as React from 'react';
 import logo from '../img/pipi.jpg';
+import icon from '../img/gear.png';
 import {
   //SafeAreaView,
   StyleSheet,
@@ -12,12 +13,14 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import Svg from 'react-native-svg';
 
-function Signin({navigation}) {
+function Profile({navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerTopContent}>
+          <Image style={styles.iconContainer} source={icon} />
           <Image style={styles.imgContainer} source={logo} />
           <Text style={styles.title}>Võ Đình Hoàng Long</Text>
           <Text style={{color: 'white'}}>Đà Nẵng, Việt Nam</Text>
@@ -59,6 +62,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#3E78B2',
+    borderWidth: 1,
   },
   headerTopContent: {
     flex: 3,
@@ -73,6 +77,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     alignItems: 'center',
+    borderWidth: 2,
   },
   headerContent: {
     alignItems: 'center',
@@ -124,6 +129,13 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     backgroundColor: '#4A525A',
   },
+  iconContainer: {
+    marginRight: -50,
+    marginBottom: 10,
+    width: 25,
+    height: 25,
+    alignSelf: 'flex-end',
+  },
   forgot: {
     marginTop: 15,
     paddingHorizontal: 10,
@@ -143,4 +155,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Signin;
+export default Profile;

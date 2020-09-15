@@ -12,12 +12,13 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import Svg from 'react-native-svg';
 
 function Signin({navigation}) {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Image style={styles.imgContainer} source={logo} />
+        <Svg style={styles.imgContainer} source={logo} />
         <View style={styles.header}>
           <Text style={styles.title}>WELCOME !</Text>
           <Text

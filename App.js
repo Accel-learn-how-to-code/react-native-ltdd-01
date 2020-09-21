@@ -11,13 +11,13 @@ const Stack = createStackNavigator();
 class App extends Component {
   render() {
     return (
-      // <NavigationContainer>
-      //   <Stack.Navigator>
-      //     <Stack.Screen name="Login" component={Login} />
-      //     <Stack.Screen name="Signin" component={Signin} />
-      //   </Stack.Navigator>
-      // </NavigationContainer>
-      <Profile />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Signin" component={Signin} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      //<Profile />
     );
   }
 }

@@ -18,7 +18,7 @@ function Signin({navigation}) {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Svg style={styles.imgContainer} source={logo} />
+        <Image style={styles.imgContainer} source={logo} />
         <View style={styles.header}>
           <Text style={styles.title}>WELCOME !</Text>
           <Text

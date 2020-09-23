@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#3E78B2',
+    backgroundColor: '#1e1e15',
     borderWidth: 1,
   },
   headerTopContent: {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 0,
     flexDirection: 'row',
-    backgroundColor: '#004BA8',
+    backgroundColor: 'black',
     width: '100%',
     height: '100%',
     alignItems: 'center',

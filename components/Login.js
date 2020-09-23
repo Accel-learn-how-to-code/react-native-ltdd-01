@@ -1,7 +1,7 @@
 import * as React from 'react';
 import logo from '../img/pipi.jpg';
 import {
-  //SafeAreaView,
+  SafeAreaView,
   StyleSheet,
   //ScrollView,
   View,
@@ -15,7 +15,7 @@ import {
 
 function Login({navigation}) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image style={styles.imgContainer} source={logo} />
       <View style={styles.header}>
         <Text style={styles.title}>HELLO THERE,</Text>
@@ -25,6 +25,7 @@ function Login({navigation}) {
             alignSelf: 'flex-start',
             paddingHorizontal: 25,
             paddingBottom: 25,
+            marginBottom: 10,
           }}>
           Log in to continue
         </Text>
@@ -53,20 +54,18 @@ function Login({navigation}) {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'skyblue',
     padding: 10,
   },
   header: {
     flex: 1,
     justifyContent: 'center',
-    // backgroundColor: 'crimson',
   },
   title: {
     paddingHorizontal: 20,
@@ -76,7 +75,6 @@ const styles = StyleSheet.create({
   content: {
     flex: 4,
     paddingHorizontal: 20,
-    // backgroundColor: 'yellow',
   },
   inputPlace: {
     height: 40,
@@ -97,7 +95,7 @@ const styles = StyleSheet.create({
   },
   imgContainer: {
     margin: 10,
-    marginBottom: 25,
+    marginBottom: 40,
     width: 130,
     height: 130,
     alignSelf: 'center',

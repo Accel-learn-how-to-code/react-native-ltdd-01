@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, Image, View, SafeAreaView, SectionList} from 'react-native';
+import {StyleSheet, Button, Text, Image, View, SafeAreaView, SectionList} from 'react-native';
 import {sectionListData} from '../data/sectionListData';
 import logo from '../img/pipi.jpg';
 
@@ -40,13 +40,14 @@ const styles = StyleSheet.create({
   },
   item: {
     backgroundColor: '#e0e0d2',
+    //minHeigh: '100px',
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
     marginVertical: 5,
     borderWidth: 1,
-    borderRadius: 50,
-    flex: 1,
-    flexDirection: 'row',
+    borderRadius: 10,
+    //flex: 1,
+    //flexDirection: 'column',
   },
   header: {
     fontSize: 32,
@@ -65,13 +66,15 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   imgContainer: {
-    width: 70,
-    height: 70,
-    borderWidth: 1,
-    borderRadius: 50,
+    width: '100%',
+    height: 200,
+    margin: 0,
+    padding: 0,
   },
   profile: {
-    paddingLeft: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    //flex: 1,
   },
 });
 

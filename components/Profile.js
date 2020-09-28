@@ -13,9 +13,19 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import Svg from 'react-native-svg';
+import {ProfileInformation} from '../data/ProfileInformation';
 
-function Profile({navigation}) {
+function ItemProfile({item}) {
+  return (
+    <View>
+      <Text style={styles.labelTiltle}>{item.title}</Text>
+      <Text style={styles.textContent}>{item.description}</Text>
+    </View>
+  );
+}
+
+function Profile() {
+  const infor = ProfileInformation;
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
@@ -40,14 +50,9 @@ function Profile({navigation}) {
       </View>
       {/* Võ Đình Hoàng Long 1811505310323 */}
       <View style={styles.content}>
-        <Text style={styles.labelTiltle}>Email </Text>
-        <Text style={styles.textContent}>cyberpunk2076@gmail.com</Text>
-        <Text style={styles.labelTiltle}>Phone </Text>
-        <Text style={styles.textContent}>0905035581</Text>
-        <Text style={styles.labelTiltle}>Twitter </Text>
-        <Text style={styles.textContent}>facebook.com/hoanglong.vo.3998</Text>
-        <Text style={styles.labelTiltle}>Facebook </Text>
-        <Text style={styles.textContent}>twitter.com/AacceleloliconN</Text>
+        {infor.map((x, index) => {
+          return <ItemProfile key={index} item={x} />;
+        })}
       </View>
     </ScrollView>
   );
@@ -150,7 +155,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'white',
     paddingBottom: 10,
-    borderBottomColor: '#eeeeee',
+    borderBottomColor: '#1D3557',
   },
 });
 

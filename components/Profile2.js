@@ -25,7 +25,7 @@ function ItemProfile({item}) {
   );
 }
 
-function Profile({navigation}) {
+function Profile2() {
   const infor = ProfileInformation;
   return (
     <ScrollView style={styles.container}>
@@ -155,4 +155,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Profile;
+export default Profile2;

@@ -1,15 +1,47 @@
 import React from 'react';
-import {StyleSheet, Button, Text, Image, View, SafeAreaView, SectionList} from 'react-native';
+import {
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  Alert,
+  Image,
+  View,
+  SafeAreaView,
+  SectionList,
+} from 'react-native';
 import {sectionListData} from '../data/sectionListData';
 import logo from '../img/pipi.jpg';
+import like from '../img/like.png';
+import dislike from '../img/dislike.png';
 
 function Item({item}) {
   return (
     <View style={styles.item}>
-      <Image  style={styles.imgContainer} source={logo} />
-      <View style={styles.profile}>
-        <Text style={styles.title}>{item.name}</Text>
-        <Text style={styles.description}>{item.description}</Text>
+      <Image style={styles.imgContainer} source={logo} />
+      <View style={{paddingHorizontal: 5}}>
+        <View style={styles.profile}>
+          <View style={styles.infor}>
+            <Text style={styles.title}>{item.name}</Text>
+            <Text style={styles.description}>{item.description}</Text>
+          </View>
+          <View style={styles.iconContainer}>
+            <TouchableOpacity
+              style={styles.iconHolder}
+              onPress={() => Alert.alert('You liked it!')}>
+              <Image style={styles.emotionIcon} source={like} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.iconHolder}
+              onPress={() => Alert.alert('You disliked it!')}>
+              <Image style={styles.emotionIcon} source={dislike} />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <TouchableOpacity
+          style={styles.readMoreHolder}
+          onPress={() => Alert.alert('Read More')}>
+          <Text style={styles.readMore}>Read More...</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -39,15 +71,12 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   item: {
-    backgroundColor: '#e0e0d2',
-    //minHeigh: '100px',
+    backgroundColor: '#eee',
     paddingVertical: 10,
     paddingHorizontal: 10,
     marginVertical: 5,
     borderWidth: 1,
     borderRadius: 10,
-    //flex: 1,
-    //flexDirection: 'column',
   },
   header: {
     fontSize: 32,
@@ -67,14 +96,45 @@ const styles = StyleSheet.create({
   },
   imgContainer: {
     width: '100%',
-    height: 200,
+    height: 150,
     margin: 0,
     padding: 0,
   },
   profile: {
-    paddingHorizontal: 10,
     paddingVertical: 5,
-    //flex: 1,
+    flexDirection: 'row',
+  },
+  emotionIcon: {
+    width: 30,
+    height: 30,
+  },
+  iconContainer: {
+    flexDirection: 'row',
+    flex: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+  },
+  iconHolder: {
+    padding: 5,
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: 'white',
+    backgroundColor: 'black',
+  },
+  infor: {
+    flex: 3,
+  },
+  readMoreHolder: {
+    marginTop: 5,
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'blue',
+  },
+  readMore: {
+    color: 'blue',
   },
 });
 

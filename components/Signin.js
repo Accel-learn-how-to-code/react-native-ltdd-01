@@ -49,7 +49,7 @@ function Signin({navigation}) {
             placeholder="Password"
           />
           <View style={styles.submitButton}>
-            <Button title="SUBMIT" color="black" />
+            <Button title="SUBMIT" color="#1D3557" />
           </View>
           <TouchableOpacity
             style={styles.signUp}
@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    backgroundColor: '#F1FAEE',
   },
   header: {
     flex: 1,
@@ -77,6 +78,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     fontSize: 32,
     fontWeight: 'bold',
+    color: '#1D3557',
   },
   content: {
     flex: 4,
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
   inputPlace: {
     height: 40,
     width: '100%',
-    borderColor: 'gray',
+    borderColor: '#1D3557',
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 10,
@@ -95,6 +97,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#1D3557',
   },
   submitButton: {
     marginVertical: 15,
@@ -106,7 +109,7 @@ const styles = StyleSheet.create({
     height: 100,
     alignSelf: 'center',
     borderWidth: 5,
-    borderColor: 'black',
+    borderColor: '#1D3557',
     borderRadius: 20,
   },
   forgot: {

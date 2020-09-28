@@ -18,7 +18,7 @@ function Item({item}) {
   return (
     <View style={styles.item}>
       <Image style={styles.imgContainer} source={logo} />
-      <View style={{paddingHorizontal: 5}}>
+      <View style={{paddingHorizontal: 15, marginTop: 10, marginBottom: 15}}>
         <View style={styles.profile}>
           <View style={styles.infor}>
             <Text style={styles.title}>{item.name}</Text>
@@ -67,32 +67,33 @@ function ListSubject() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F1FAEE',
     padding: 10,
   },
   item: {
-    backgroundColor: '#eee',
-    paddingVertical: 10,
-    paddingHorizontal: 10,
+    backgroundColor: '#A8DADC',
+    //paddingVertical: 10,
+    //paddingHorizontal: 10,
     marginVertical: 7,
     borderWidth: 1,
     borderRadius: 10,
+    overflow: 'hidden',
   },
   header: {
     fontSize: 32,
     padding: 10,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#1D3557',
     alignSelf: 'center',
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#1D3557',
   },
   description: {
     fontSize: 16,
-    color: 'black',
+    color: '#1D3557',
   },
   imgContainer: {
     width: '100%',
@@ -101,7 +102,6 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   profile: {
-    paddingVertical: 5,
     flexDirection: 'row',
   },
   emotionIcon: {
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     borderColor: 'white',
-    backgroundColor: 'black',
+    backgroundColor: '#1D3557',
   },
   infor: {
     flex: 3,
@@ -131,10 +131,11 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 10,
     borderWidth: 1,
-    borderColor: 'blue',
+    borderColor: '#1D3557',
+    backgroundColor: '#F1FAEE',
   },
   readMore: {
-    color: 'blue',
+    color: '#1D3557',
   },
 });
 

@@ -14,7 +14,7 @@ import {
 
 function Home({navigation}) {
   return (
-    <View>
+    <ScrollView contentContainerStyle={styles.container}>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('LogIn')}>
@@ -40,16 +40,21 @@ function Home({navigation}) {
         onPress={() => navigation.navigate('Profile2')}>
         <Text style={styles.buttonName}>Profile 2</Text>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F1FAEE',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   button: {
     width: '40%',
-    backgroundColor: 'black',
-    paddingVertical: 5,
-    paddingHorizontal: 10,
+    backgroundColor: '#1D3557',
+    padding: 10,
     marginVertical: 5,
     alignSelf: 'center',
   },

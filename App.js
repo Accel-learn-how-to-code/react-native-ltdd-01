@@ -14,17 +14,17 @@ const Stack = createStackNavigator();
 class App extends Component {
   render() {
     return (
-      // <NavigationContainer>
-      //   <Stack.Navigator>
-      //     <Stack.Screen name="Menu" component={HomeMenu} />
-      //     <Stack.Screen name="LogIn" component={Login} />
-      //     <Stack.Screen name="SignUp" component={Signin} />
-      //     <Stack.Screen name="SectionList" component={ListSubject} />
-      //     <Stack.Screen name="Profile" component={Profile} />
-      //     <Stack.Screen name="Profile2" component={Profile2} />
-      //   </Stack.Navigator>
-      // </NavigationContainer>
-      <Profile2 />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Menu" component={HomeMenu} />
+          <Stack.Screen name="LogIn" component={Login} />
+          <Stack.Screen name="SignUp" component={Signin} />
+          <Stack.Screen name="SectionList" component={ListSubject} />
+          <Stack.Screen name="Profile" component={Profile} />
+          <Stack.Screen name="Profile2" component={Profile2} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      //<Profile2 />
     );
   }
 }

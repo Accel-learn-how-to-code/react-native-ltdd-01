@@ -26,6 +26,7 @@ function Login({navigation}) {
             paddingHorizontal: 25,
             paddingBottom: 25,
             marginBottom: 10,
+            color: '#1D3557',
           }}>
           Log in to continue
         </Text>
@@ -41,15 +42,17 @@ function Login({navigation}) {
           placeholder="Password"
         />
         <TouchableOpacity style={styles.forgot}>
-          <Text style={{fontWeight: 'bold'}}>Forgot Password ?</Text>
+          <Text style={{fontWeight: 'bold', color: '#1D3557'}}>
+            Forgot Password ?
+          </Text>
         </TouchableOpacity>
         <View style={styles.submitButton}>
-          <Button title="GO" color="black" />
+          <Button title="GO" color="#1D3557" />
         </View>
         <TouchableOpacity
           style={styles.signUp}
           onPress={() => navigation.navigate('Signin')}>
-          <Text style={{fontWeight: 'bold'}}>
+          <Text style={{fontWeight: 'bold', color: '#1D3557'}}>
             Don't have a account? Sign up now!
           </Text>
         </TouchableOpacity>
@@ -62,6 +65,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    backgroundColor: '#F1FAEE',
   },
   header: {
     flex: 1,
@@ -71,6 +75,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     fontSize: 32,
     fontWeight: 'bold',
+    color: '#1D3557',
   },
   content: {
     flex: 4,
@@ -79,7 +84,7 @@ const styles = StyleSheet.create({
   inputPlace: {
     height: 40,
     width: '100%',
-    borderColor: 'gray',
+    borderColor: '#1D3557',
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 10,
@@ -89,6 +94,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#1D3557',
   },
   submitButton: {
     marginVertical: 15,
@@ -100,7 +106,7 @@ const styles = StyleSheet.create({
     height: 130,
     alignSelf: 'center',
     borderWidth: 5,
-    borderColor: 'black',
+    borderColor: '#1D3557',
     borderRadius: 20,
   },
   forgot: {

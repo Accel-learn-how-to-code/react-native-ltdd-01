@@ -17,11 +17,13 @@ import Svg from 'react-native-svg';
 
 function Profile({navigation}) {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerTopContent}>
           <Image style={styles.iconContainer} source={icon} />
-          <Image style={styles.imgContainer} source={logo} />
+          <View style={styles.imgContainerBorder}>
+            <Image style={styles.imgContainer} source={logo} />
+          </View>
           <Text style={styles.title}>Võ Đình Hoàng Long</Text>
           <Text style={{color: 'white'}}>Đà Nẵng, Việt Nam</Text>
         </View>
@@ -47,53 +49,52 @@ function Profile({navigation}) {
         <Text style={styles.labelTiltle}>Facebook </Text>
         <Text style={styles.textContent}>twitter.com/AacceleloliconN</Text>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#F1FAEE',
   },
   header: {
     flex: 1,
     paddingTop: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#1e1e15',
+    backgroundColor: '#1D3557',
     borderWidth: 1,
   },
   headerTopContent: {
     flex: 3,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+    marginBottom: 15,
   },
   headerBottomContent: {
     flex: 1,
-    padding: 0,
     flexDirection: 'row',
-    backgroundColor: 'black',
+    backgroundColor: '#457B9D',
     width: '100%',
     height: '100%',
     alignItems: 'center',
-    borderWidth: 2,
+    paddingVertical: 10,
   },
   headerContent: {
     alignItems: 'center',
-    borderWidth: 1,
     borderTopWidth: 0,
     borderBottomWidth: 0,
     width: '50%',
   },
   title: {
     paddingHorizontal: 20,
-    color: 'white',
+    color: '#fff',
     fontSize: 25,
   },
   title2: {
     paddingHorizontal: 20,
-    color: 'white',
+    color: '#fff',
     fontSize: 20,
   },
   content: {
@@ -111,43 +112,41 @@ const styles = StyleSheet.create({
   labelTiltle: {
     paddingHorizontal: 14,
     marginVertical: 5,
-    fontSize: 13,
-    color: 'black',
+    fontSize: 20,
+    color: '#1D3557',
     fontWeight: 'bold',
   },
   submitButton: {
     marginVertical: 15,
   },
-  imgContainer: {
-    margin: 5,
-    marginBottom: 10,
-    width: 100,
-    height: 100,
-    alignSelf: 'center',
-    borderWidth: 2,
-    borderColor: 'white',
+  imgContainerBorder: {
+    width: 170,
+    height: 170,
+    borderWidth: 1,
+    borderColor: '#457B9D',
     borderRadius: 100,
-    backgroundColor: '#4A525A',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  imgContainer: {
+    width: 150,
+    height: 150,
+    borderWidth: 4,
+    borderColor: '#457B9D',
+    borderRadius: 100,
   },
   iconContainer: {
     marginRight: -50,
-    marginBottom: 10,
+    marginVertical: 10,
     width: 25,
     height: 25,
     alignSelf: 'flex-end',
   },
-  forgot: {
-    marginTop: 15,
-    paddingHorizontal: 10,
-    alignSelf: 'flex-end',
-  },
-  signUp: {
-    alignSelf: 'center',
-  },
   textContent: {
     paddingHorizontal: 14,
     fontSize: 16,
-    color: 'black',
+    color: '#1D3557',
     borderWidth: 1,
     borderColor: 'white',
     paddingBottom: 10,

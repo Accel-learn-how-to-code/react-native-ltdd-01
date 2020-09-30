@@ -53,7 +53,7 @@ function Signin({navigation}) {
           </View>
           <TouchableOpacity
             style={styles.signUp}
-            onPress={() => navigation.navigate('Login')}>
+            onPress={() => navigation.navigate('LogIn')}>
             <Text style={{fontWeight: 'bold'}}>
               Already have an account? Login here.
             </Text>

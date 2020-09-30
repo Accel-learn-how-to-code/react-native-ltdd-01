@@ -12,6 +12,7 @@ import {
   Button,
   Image,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import {ProfileInformation} from '../data/ProfileInformation';
 
@@ -30,7 +31,11 @@ function Profile() {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerTopContent}>
-          <Image style={styles.iconContainer} source={icon} />
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => Alert.alert('You clicked option!')}>
+            <Image style={{width: 30, height: 30}} source={icon} />
+          </TouchableOpacity>
           <View style={styles.imgContainerBorder}>
             <Image style={styles.imgContainer} source={logo} />
           </View>

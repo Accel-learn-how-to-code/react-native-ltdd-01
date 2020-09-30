@@ -11,8 +11,9 @@ import {
   //StatusBar,
   //TextInput,
   //Button,
+  Alert,
   Image,
-  //TouchableOpacity,
+  TouchableOpacity,
 } from 'react-native';
 import {ProfileInformation} from '../data/ProfileInformation';
 
@@ -31,7 +32,11 @@ function Profile2() {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerTopContent}>
-          <Image style={styles.iconContainer} source={icon} />
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => Alert.alert('You clicked option!')}>
+            <Image  style={{width: 30, height: 30}} source={icon} />
+          </TouchableOpacity>
           <View style={styles.imgContainerBorder}>
             <Image style={styles.imgContainer} source={logo} />
           </View>
@@ -127,10 +132,10 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   iconContainer: {
-    marginRight: -50,
-    marginVertical: 10,
-    width: 25,
-    height: 25,
+    marginRight: -70,
+    marginTop: 10,
+    width: 50,
+    height: 50,
     alignSelf: 'flex-end',
   },
   blockInfor: {

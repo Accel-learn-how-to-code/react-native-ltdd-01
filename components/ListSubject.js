@@ -13,16 +13,47 @@ import {sectionListData} from '../data/sectionListData';
 import logo from '../img/pipi.jpg';
 import like from '../img/like.png';
 import dislike from '../img/dislike.png';
+import {Avatar, Button, Card, Title, Paragraph} from 'react-native-paper';
+
+//const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 
 function Item({item}) {
   return (
-    <View style={styles.item}>
-      <Image style={styles.imgContainer} source={logo} />
-      <View style={{paddingHorizontal: 15, marginTop: 10, marginBottom: 15}}>
+    // <View style={styles.item}>
+    //   <Image style={styles.imgContainer} source={logo} />
+    //   <View style={{paddingHorizontal: 15, marginTop: 10, marginBottom: 15}}>
+    //     <View style={styles.profile}>
+    //       <View style={styles.infor}>
+    //         <Text style={styles.title}>{item.name}</Text>
+    //         <Text style={styles.description}>{item.description}</Text>
+    //       </View>
+    //       <View style={styles.iconContainer}>
+    //         <TouchableOpacity
+    //           style={styles.iconHolder}
+    //           onPress={() => Alert.alert('You liked it!')}>
+    //           <Image style={styles.emotionIcon} source={like} />
+    //         </TouchableOpacity>
+    //         <TouchableOpacity
+    //           style={styles.iconHolder}
+    //           onPress={() => Alert.alert('You disliked it!')}>
+    //           <Image style={styles.emotionIcon} source={dislike} />
+    //         </TouchableOpacity>
+    //       </View>
+    //     </View>
+    //     <TouchableOpacity
+    //       style={styles.readMoreHolder}
+    //       onPress={() => Alert.alert('Read More')}>
+    //       <Text style={styles.readMore}>Read More...</Text>
+    //     </TouchableOpacity>
+    //   </View>
+    // </View>
+    <Card style={styles.item}>
+      <Card.Cover source={logo} />
+      <Card.Content>
         <View style={styles.profile}>
           <View style={styles.infor}>
-            <Text style={styles.title}>{item.name}</Text>
-            <Text style={styles.description}>{item.description}</Text>
+            <Title style={styles.title}>{item.name}</Title>
+            <Paragraph style={styles.description}>{item.description}</Paragraph>
           </View>
           <View style={styles.iconContainer}>
             <TouchableOpacity
@@ -37,17 +68,12 @@ function Item({item}) {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity
-          style={styles.readMoreHolder}
-          onPress={() => Alert.alert('Read More')}>
-          <Text style={styles.readMore}>Read More...</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+      </Card.Content>
+    </Card>
   );
 }
 
-function Title({section}) {
+function TitleLabel({section}) {
   return <Text style={styles.header}>{section.title}</Text>;
 }
 
@@ -58,7 +84,7 @@ function ListSubject() {
         sections={sectionListData}
         keyExtractor={(item, index) => item + index}
         renderItem={({item}) => <Item item={item} />}
-        renderSectionHeader={({section}) => <Title section={section} />}
+        renderSectionHeader={({section}) => <TitleLabel section={section} />}
       />
     </SafeAreaView>
   );
@@ -71,9 +97,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   item: {
-    backgroundColor: '#A8DADC',
-    //paddingVertical: 10,
-    //paddingHorizontal: 10,
+    //backgroundColor: '#A8DADC',
     marginVertical: 7,
     borderWidth: 1,
     borderRadius: 10,
@@ -110,12 +134,14 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     flexDirection: 'row',
-    flex: 1,
-    alignItems: 'flex-end',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
   iconHolder: {
-    padding: 5,
+    paddingVertical: 7,
+    paddingHorizontal: 10,
+    width: 50,
+    height: 50,
     borderWidth: 1,
     borderRadius: 10,
     borderColor: 'white',

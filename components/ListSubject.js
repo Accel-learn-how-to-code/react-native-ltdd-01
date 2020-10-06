@@ -19,34 +19,6 @@ import {Avatar, Button, Card, Title, Paragraph} from 'react-native-paper';
 
 function Item({item}) {
   return (
-    // <View style={styles.item}>
-    //   <Image style={styles.imgContainer} source={logo} />
-    //   <View style={{paddingHorizontal: 15, marginTop: 10, marginBottom: 15}}>
-    //     <View style={styles.profile}>
-    //       <View style={styles.infor}>
-    //         <Text style={styles.title}>{item.name}</Text>
-    //         <Text style={styles.description}>{item.description}</Text>
-    //       </View>
-    //       <View style={styles.iconContainer}>
-    //         <TouchableOpacity
-    //           style={styles.iconHolder}
-    //           onPress={() => Alert.alert('You liked it!')}>
-    //           <Image style={styles.emotionIcon} source={like} />
-    //         </TouchableOpacity>
-    //         <TouchableOpacity
-    //           style={styles.iconHolder}
-    //           onPress={() => Alert.alert('You disliked it!')}>
-    //           <Image style={styles.emotionIcon} source={dislike} />
-    //         </TouchableOpacity>
-    //       </View>
-    //     </View>
-    //     <TouchableOpacity
-    //       style={styles.readMoreHolder}
-    //       onPress={() => Alert.alert('Read More')}>
-    //       <Text style={styles.readMore}>Read More...</Text>
-    //     </TouchableOpacity>
-    //   </View>
-    // </View>
     <Card style={styles.item}>
       <Card.Cover source={logo} />
       <Card.Content>

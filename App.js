@@ -1,17 +1,19 @@
 import 'react-native-gesture-handler';
 import React, {Component} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+//import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Login from './components/Login';
-import Signin from './components/Signin';
-import Profile from './components/Profile';
-import Profile2 from './components/Profile2';
-import ListSubject from './components/ListSubject';
-import HomeMenu from './components/HomeMenu';
+// import Login from './components/Login';
+// import Signin from './components/Signin';
+// import Profile from './components/Profile';
+//import Profile2 from './components/Profile2';
+// import ListSubject from './components/ListSubject';
+// import HomeMenu from './components/HomeMenu';
 
-import MutlipleGreeting from './components/Tutorials/MutlipleGreeting';
-import Clock from './components/Tutorials/Clock';
-import InputExample from './components/Tutorials/InputExample';
+// import MutlipleGreeting from './components/Tutorials/MutlipleGreeting';
+// import Clock from './components/Tutorials/Clock';
+// import InputExample from './components/Tutorials/InputExample';
+// import ScrollViewExample from './components/Tutorials/ScrollViewExample';
+import FlatListExample from './components/Tutorials/FlatListExample';
 
 const Stack = createStackNavigator();
 
@@ -33,7 +35,9 @@ class App extends Component {
       //for learning
       //<MutlipleGreeting />
       //<Clock />
-      <InputExample />
+      //<InputExample />
+      //<ScrollViewExample />
+      <FlatListExample />
     );
   }
 }

@@ -14,7 +14,7 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import {ProfileInformation} from '../data/ProfileInformation';
+import ProfileInformation from '../data/ProfileInformation';
 
 function ItemProfile({item}) {
   return (

@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import itemData from '../../data/ProfileInformation';
 import Swipeout from 'react-native-swipeout';
+import AddItemModal from './AddItemModal';
 
 class Item extends Component {
   render() {
@@ -64,17 +65,19 @@ class Item extends Component {
   }
 }
 export default class FlatListExample extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       keyChanged: null,
     };
+    this._onPressAdd = this._onPressAdd.bind(this);
   }
   refreshScreen(keyChanged) {
     this.setState({keyChanged: keyChanged});
   }
   _onPressAdd() {
-    alert('You click me! - the Plus Icon');
+    //alert('You click me! - the Plus Icon');
+    this.AddItemModal.showModal();
   }
   render() {
     return (
@@ -90,6 +93,13 @@ export default class FlatListExample extends Component {
             return <Item item={item} index={index} parentFlatList={this} />;
           }}
           keyExtractor={(item) => item.id}
+        />
+        <AddItemModal
+          //tạo ref để truy cập function trong component con
+          ref={(value) => {
+            this.AddItemModal = value;
+          }}
+          FlatListExample={this}
         />
       </SafeAreaView>
     );

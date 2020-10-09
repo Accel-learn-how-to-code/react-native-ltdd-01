@@ -4,12 +4,45 @@ import itemData from '../../data/ProfileInformation';
 import Swipeout from 'react-native-swipeout';
 
 export default class FlatListItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+  }
+  refreshItem() {
+    this.setState({count: ++this.state.count});
+  }
   render() {
     var item = this.props.item;
     var index = this.props.index;
     const swipeSetting = {
       autoClose: true,
       right: [
+        {
+          onPress: () => {
+            Alert.alert(
+              'Cảnh báo',
+              'Bạn có muốn chỉnh sửa item không?',
+              [
+                {
+                  text: 'Cancel',
+                  onPress: () => console.log('Cancel Pressed'),
+                  style: 'cancel',
+                },
+                {
+                  text: 'OK',
+                  onPress: () => {
+                    this.props.parentFlatList.EditItemModal.showModal(index);
+                  },
+                },
+              ],
+              {cancelable: true},
+            );
+          },
+          text: 'Edit',
+          type: 'primary',
+        },
         {
           onPress: () => {
             Alert.alert(

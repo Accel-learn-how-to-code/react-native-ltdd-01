@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import itemData from '../../data/ProfileInformation';
 import AddItemModal from './AddItemModal';
+import EditItemModal from './EditItemModal';
 import FlatListItem from './FlatListItem';
 
 export default class FlatListExample extends Component {
@@ -18,11 +19,13 @@ export default class FlatListExample extends Component {
     this.state = {
       keyChanged: null,
     };
-    this._onPressAdd = this._onPressAdd.bind(this);
   }
   refreshScreen(keyChanged) {
     this.setState({keyChanged: keyChanged});
     this.flatList.scrollToEnd();
+  }
+  refreshItem(keyChanged) {
+    this.setState({keyChanged: keyChanged});
   }
   _onPressAdd() {
     this.AddItemModal.showModal();
@@ -31,7 +34,7 @@ export default class FlatListExample extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
-          <TouchableHighlight onPress={this._onPressAdd}>
+          <TouchableHighlight onPress={() => this._onPressAdd()}>
             <Image style={styles.icon} source={require('../../img/plus.png')} />
           </TouchableHighlight>
         </View>
@@ -48,10 +51,19 @@ export default class FlatListExample extends Component {
           }}
           keyExtractor={(item) => item.id}
         />
+
         <AddItemModal
           //tạo ref để truy cập function trong component con
           ref={(value) => {
             this.AddItemModal = value;
+          }}
+          parentFlatList={this}
+        />
+
+        <EditItemModal
+          //tạo ref để truy cập function trong component con
+          ref={(value) => {
+            this.EditItemModal = value;
           }}
           parentFlatList={this}
         />

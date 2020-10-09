@@ -1,23 +1,16 @@
 import * as React from 'react';
 import {Component} from 'react';
-import {
-  Text,
-  View,
-  FlatList,
-  StyleSheet,
-  Image,
-  SafeAreaView,
-  Alert,
-  Platform,
-  TouchableHighlight,
-} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import {Modal, Portal, Button, Provider, TextInput} from 'react-native-paper';
+import itemData from '../../data/ProfileInformation';
 
 export default class addItemModal extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       isVisible: false,
+      title: '',
+      description: '',
     };
     this.hideModal = this.hideModal.bind(this);
     this.showModal = this.showModal.bind(this);
@@ -41,14 +34,20 @@ export default class addItemModal extends Component {
               <View style={styles.contentHolder}>
                 <View style={styles.inputHolder}>
                   <TextInput
-                    label="Email"
+                    label="Title"
                     placeholder="Nhập tiêu đề"
-                    onChangeText={() => console.log('Pressed Input1')}
+                    value={this.state.title}
+                    onChangeText={(text) => {
+                      this.setState({title: text});
+                    }}
                   />
                   <TextInput
-                    label="Email"
+                    label="Description"
                     placeholder="Nhập miêu tả"
-                    onChangeText={() => console.log('Pressed Input1')}
+                    value={this.state.description}
+                    onChangeText={(text) => {
+                      this.setState({description: text});
+                    }}
                   />
                 </View>
                 <View style={styles.buttonHolder}>
@@ -61,7 +60,19 @@ export default class addItemModal extends Component {
                   <Button
                     style={styles.buttonStyle}
                     mode="text"
-                    onPress={() => console.log('Pressed Accept')}>
+                    onPress={() => {
+                      const id = itemData.length + 1;
+                      const newItem = {
+                        id: id,
+                        title: this.state.title,
+                        description: this.state.description,
+                        imageUri:
+                          'https://i.pinimg.com/564x/d5/f7/ef/d5f7efb5c1babc9bb53c093e25f0a2fb.jpg',
+                      };
+                      itemData.push(newItem);
+                      this.props.parentFlatList.refreshScreen(id);
+                      this.hideModal();
+                    }}>
                     Accept
                   </Button>
                 </View>

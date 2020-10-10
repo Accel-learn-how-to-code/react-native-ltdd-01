@@ -13,7 +13,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 // import Clock from './components/Tutorials/Clock';
 // import InputExample from './components/Tutorials/InputExample';
 // import ScrollViewExample from './components/Tutorials/ScrollViewExample';
-import FlatListExample from './components/Tutorials/FlatListExample';
+//import FlatListExample from './components/Tutorials/FlatListExample';
+import HorizontalFlatList from './components/Tutorials/HorizontalFlatList';
 
 const Stack = createStackNavigator();
 
@@ -37,7 +38,8 @@ class App extends Component {
       //<Clock />
       //<InputExample />
       //<ScrollViewExample />
-      <FlatListExample />
+      //<FlatListExample />
+      <HorizontalFlatList />
     );
   }
 }

@@ -14,7 +14,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 // import InputExample from './components/Tutorials/InputExample';
 // import ScrollViewExample from './components/Tutorials/ScrollViewExample';
 //import FlatListExample from './components/Tutorials/FlatListExample';
-import HorizontalFlatList from './components/Tutorials/HorizontalFlatList';
+//import HorizontalFlatList from './components/Tutorials/HorizontalFlatList';
+import LifeCycleTest from './components/Tutorials/LifeCycleTest';
 
 const Stack = createStackNavigator();
 
@@ -39,7 +40,8 @@ class App extends Component {
       //<InputExample />
       //<ScrollViewExample />
       //<FlatListExample />
-      <HorizontalFlatList />
+      //<HorizontalFlatList />
+      <LifeCycleTest />
     );
   }
 }

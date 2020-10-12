@@ -22,6 +22,11 @@ function Home({navigation}) {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
+        onPress={() => navigation.navigate('Login2')}>
+        <Text style={styles.buttonName}>Log in 2</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate('SignUp')}>
         <Text style={styles.buttonName}>Sign up</Text>
       </TouchableOpacity>
@@ -39,6 +44,16 @@ function Home({navigation}) {
         style={styles.button}
         onPress={() => navigation.navigate('Profile2')}>
         <Text style={styles.buttonName}>Profile 2</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Profile3')}>
+        <Text style={styles.buttonName}>Profile 3</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('FlatListExample')}>
+        <Text style={styles.buttonName}>FlatList Example</Text>
       </TouchableOpacity>
     </ScrollView>
   );

@@ -1,36 +1,72 @@
 import React, {Component} from 'react';
 import {
   View,
+  Text,
   FlatList,
   StyleSheet,
   Image,
   SafeAreaView,
   Platform,
   TouchableHighlight,
+  RefreshControl,
 } from 'react-native';
-import itemData from '../../data/ProfileInformation';
+//import itemData from '../../data/ProfileInformation';
 import AddItemModal from './AddItemModal';
 import EditItemModal from './EditItemModal';
 import FlatListItem from './FlatListItem';
+import getData from '../../Networking/Server';
 
 export default class FlatListExample extends Component {
   constructor(props) {
     super(props);
     this.state = {
       keyChanged: null,
+      itemData: null,
+      refresh: false,
     };
   }
+
+  componentDidMount() {
+    this.refreshData();
+  }
+
+  onRefreshData() {
+    //refresh Data each time the state is refresh
+    this.refreshData();
+  }
+
+  refreshData() {
+    //set the refresh
+    this.setState({refresh: true});
+    //get data
+    getData()
+      .then((data) => {
+        this.setState({itemData: data.ProfileInformation});
+        this.setState({refresh: false});
+      })
+      .catch((error) => {
+        //error thì set lại mảng rỗng và refresh về false
+        this.setState({itemData: []});
+        this.setState({refresh: false});
+        console.log('Error on refreshData function: ' + error);
+      });
+  }
+
   refreshScreen(keyChanged) {
     this.setState({keyChanged: keyChanged});
     this.flatList.scrollToEnd();
   }
+
   refreshItem(keyChanged) {
     this.setState({keyChanged: keyChanged});
   }
+
   _onPressAdd() {
     this.AddItemModal.showModal();
   }
+
   render() {
+    let itemData = this.state.itemData;
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
@@ -38,6 +74,7 @@ export default class FlatListExample extends Component {
             <Image style={styles.icon} source={require('../../img/plus.png')} />
           </TouchableHighlight>
         </View>
+
         <FlatList
           //tạo ref để truy cập function trong component con
           ref={(value) => {
@@ -50,6 +87,12 @@ export default class FlatListExample extends Component {
             );
           }}
           keyExtractor={(item) => item.id}
+          refreshControl={
+            <RefreshControl
+              refreshing={this.state.refresh}
+              onRefresh={() => this.onRefreshData()}
+            />
+          }
         />
 
         <AddItemModal
@@ -71,6 +114,7 @@ export default class FlatListExample extends Component {
     );
   }
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

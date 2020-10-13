@@ -76,7 +76,7 @@ export default class FlatListItem extends Component {
     return (
       <Swipeout {...swipeSetting}>
         <View style={styles.itemHolder}>
-          <Image style={styles.imgContainer} source={{uri: item.imageUri}} />
+          <Image style={styles.imgContainer} source={require('../img/pipi.jpg')} />
           <View style={styles.titleHolder}>
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.description}>{item.description}</Text>
